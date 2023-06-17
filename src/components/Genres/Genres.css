@@ -1,0 +1,52 @@
+.genres_dropdown {
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    padding: 12px 16px;
+    border-radius: 6px;
+    background-color: #282526;
+    transition: background-color 0.3s, color 0.3s;
+    border: 1px solid deepskyblue;
+    outline: none;
+    overflow: hidden;
+}
+
+.genres_dropdown::after {
+    content: '\25BE';
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #fff;
+}
+
+.genres_dropdown:hover {
+    background-color: #352e2f;
+}
+
+.genres_dropdown:focus {
+    background-color: #2a2929;
+    color: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.genres_dropdown option {
+    background-color: #2e2c2d;
+    color: #fff;
+    padding: 12px 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.genres_dropdown option:hover {
+    background-color: #232121;
+}
+
+.genres_dropdown:focus option {
+    background-color: #272525;
+}
+

@@ -1,0 +1,82 @@
+.movies_content {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movies_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/*===================================================*/
+
+.poster {
+    width: 350px;
+    height: 500px;
+    border-radius: 8px;
+}
+
+.poster_block:hover img{
+    transform: scale(1.1)
+}
+.poster_block img{
+    transition: transform 0.3s ease 0s;
+    position: absolute;
+    object-fit: cover;
+}
+
+.poster_block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    width: 360px;
+    height: 590px;
+    border-radius: 25px;
+}
+
+/*===================================================*/
+.pagination_buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px 0;
+}
+
+.pagination_btn {
+    align-items: center;
+    background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+    border: 0;
+    border-radius: 18px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    font-family: Phantomsans, sans-serif;
+    font-size: 20px;
+    line-height: 1em;
+    padding: 19px 24px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.pagination_btn:active,
+.pagination_btn:hover {
+    outline: 0;
+}
+
+@media (min-width: 768px) {
+    .pagination_btn {
+        font-size: 24px;
+        min-width: 196px;
+    }
+}
