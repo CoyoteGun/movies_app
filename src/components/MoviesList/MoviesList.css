@@ -20,7 +20,7 @@
 }
 
 .poster_block:hover img{
-    transform: scale(1.1)
+    transform: scale(1.1);
 }
 .poster_block img{
     transition: transform 0.3s ease 0s;
@@ -38,7 +38,6 @@
     height: 590px;
     border-radius: 25px;
 }
-
 /*===================================================*/
 .pagination_buttons {
     width: 100%;

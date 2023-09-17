@@ -54,6 +54,11 @@
     align-items: center;
 }
 
+.toggle_text{
+    text-align: center;
+    margin-left: 10px;
+}
+
 .search_block {
     display: flex;
     align-items: center;

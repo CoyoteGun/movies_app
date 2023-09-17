@@ -21,7 +21,7 @@ export const MoviesList = () => {
         <div className={'movies_content'}>
             <div className={'movies_container'}>
                 {movies && movies.map(item => {
-                    const {id, poster_path, title} = item;
+                    const {id, poster_path, title, overview} = item;
 
                     return (
                         <div key={id}>

@@ -7,6 +7,7 @@ import './Header.css';
 import {movieRequests} from "../../api/requests/movieRequest";
 import {movieActions} from "../../redux/slices/movieSlice";
 import {Genres} from "../Genres/Genres";
+import {ThemeToggle} from "../ThemeToggle/ThemeToggle";
 
 export const Header = () => {
     const [searchValue, setSearchValue] = useState('');
@@ -37,6 +38,9 @@ export const Header = () => {
                 <NavLink className={'header_nav'} to={'upcoming'}><span>Upcoming</span></NavLink>
                 <Genres />
             </div>
+            <p className={'toggle_text'}>Dark/Light
+                <ThemeToggle/>
+            </p>
             <div className={'header_right'}>
                 <div className={'search_block'}>
                     <input

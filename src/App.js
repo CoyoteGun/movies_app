@@ -1,3 +1,4 @@
+import React, {useState} from "react";
 import {Route, Routes} from "react-router-dom";
 
 import './App.css';
@@ -10,8 +11,14 @@ import {HomePage} from "./pages/HomePage/HomePage";
 import {MovieDetails} from "./pages/MovieDetails/MovieDetails";
 import {Genres} from "./components/Genres/Genres";
 
+export const ThemeContext = React.createContext({});
+
 function App() {
+
+    const [theme, setTheme] = useState("dark");
+
   return (
+      <ThemeContext.Provider value={{theme, setTheme}}>
     <div className="App">
           <Routes>
               <Route path={'/'} element={<MainLayout/> }>
@@ -24,6 +31,7 @@ function App() {
               </Route>
           </Routes>
     </div>
+      </ThemeContext.Provider>
   );
 }
 
