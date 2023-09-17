@@ -50,28 +50,26 @@
 
 .pagination_btn {
     align-items: center;
-    background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
-    border: 0;
-    border-radius: 18px;
+    background-color: #000000;
+    border: 2px solid #fdca00;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
     box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
     box-sizing: border-box;
-    color: #FFFFFF;
+    color: #fdca00;
     font-family: Phantomsans, sans-serif;
     font-size: 20px;
     line-height: 1em;
     padding: 19px 24px;
     text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
     cursor: pointer;
     margin: 5px;
 }
 
-.pagination_btn:active,
 .pagination_btn:hover {
-    outline: 0;
+    background-color: #fdca00;
+    color: #ffffff;
+    transition: all 0.5s ease-out;
 }
 
 @media (min-width: 768px) {

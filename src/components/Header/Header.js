@@ -9,20 +9,29 @@ import {movieActions} from "../../redux/slices/movieSlice";
 import {Genres} from "../Genres/Genres";
 
 export const Header = () => {
-
     const [searchValue, setSearchValue] = useState('');
-
-    const {movies} = useSelector(state => state.movies);
+    const { movies } = useSelector(state => state.movies);
     const dispatch = useDispatch();
 
     const searchMovie = (query) => {
-        if (query) movieRequests.search(query).then(({data}) => dispatch(movieActions.getSearchMovies(data.results)));
+        if (query) {
+            movieRequests.search(query).then(({ data }) => {
+                dispatch(movieActions.getSearchMovies(data.results));
+                setSearchValue('');
+            });
+        }
+    };
+
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            searchMovie(searchValue);
+        }
     };
 
     return (
         <div className={'header'}>
             <div className={'header_left'}>
-                <NavLink className={'header_nav header_icon'} to={'/'}><p>Coyote TV</p></NavLink>
+                <NavLink className={'header_nav header_icon'} to={'/'}><span>Coyote TV</span></NavLink>
                 <NavLink className={'header_nav'} to={'popular'}><span>Popular</span></NavLink>
                 <NavLink className={'header_nav'} to={'top_rated'}><span>Top Rated</span></NavLink>
                 <NavLink className={'header_nav'} to={'upcoming'}><span>Upcoming</span></NavLink>
@@ -30,10 +39,17 @@ export const Header = () => {
             </div>
             <div className={'header_right'}>
                 <div className={'search_block'}>
-                    <input onChange={event => setSearchValue(event.target.value)} className={'search_input'} type="text"
-                           placeholder={'Search'} />
-                    <div onClick={() => searchMovie(searchValue)} className={'search_btn'}><i
-                        className="fa-sharp fa-solid fa-magnifying-glass"></i></div>
+                    <input
+                        onChange={event => setSearchValue(event.target.value)}
+                        onKeyDown={handleKeyDown}
+                        value={searchValue}
+                        className={'search_input'}
+                        type="text"
+                        placeholder={'Search'}
+                    />
+                    <div onClick={() => searchMovie(searchValue)} className={'search_btn'}>
+                        <i className="fa-sharp fa-solid fa-magnifying-glass"></i>
+                    </div>
                 </div>
                 <div className={'user_profile'}>
                     <p>UA</p>

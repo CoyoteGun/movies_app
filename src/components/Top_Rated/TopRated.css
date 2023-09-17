@@ -1,3 +1,8 @@
+.top_title {
+    margin: 20px;
+    color: #fdca00;
+}
+
 .movies_top_content {
     display: flex;
     flex-wrap: wrap;

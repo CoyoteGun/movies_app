@@ -20,7 +20,7 @@ export const TopRated = () => {
 
     return (
         <div className={'movies_top_content'}>
-            <h1>TopRated</h1>
+            <h1 className={'top_title'}>TopRated</h1>
             <div className={'movies_top_container'}>
                 {movies && movies.map(item => {const {id, poster_path, title, vote_average} = item;
 
